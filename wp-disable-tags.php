@@ -3,6 +3,7 @@
 /*
  * Plugin Name:     Wvnderlab - Disable Tags
  * Plugin URI:      https://github.com/wvnderlab-agency/disable-posts/
+ * Description:     Deactivate the default post tags.
  * Author:          Wvnderlab Agency
  * Author URI:      https://wvnderlab.com
  * Text Domain:     wvnderlab-disable-tags
