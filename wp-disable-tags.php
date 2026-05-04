@@ -81,24 +81,6 @@ function exclude_tags_from_queries( WP_Query $query ): void {
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\exclude_tags_from_queries', PHP_INT_MAX );
 
 /**
- * Prevent assigning tags to posts
- *
- * @hooked filter wp_insert_post_data
- * @param array $data An array of slashed, sanitized, and processed post data.
- * @param array $post An array of sanitized (and slashed) but otherwise unmodified post data.
- * @return array
- */
-function prevent_tags_assignment( array $data, array $post ): array {
-	if ( isset( $post['tags_input'] ) ) {
-		$data['tax_input']['post_tag'] = array();
-	}
-
-	return $data;
-}
-
-add_filter( 'wp_insert_post_data', __NAMESPACE__ . '\\prevent_tags_assignment', PHP_INT_MAX, 2 );
-
-/**
  * Remove Tags Metabox
  *
  * @hooked action admin_menu
